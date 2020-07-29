@@ -10,7 +10,22 @@ Please see below for a step-by-step walkthrough of how to setup your discord bot
 
 # Setting up to run the bot!
 
-## 1. Get Node.js and npm
+## 1. Clone this Repo
+Make sure git is installed on your computer. To check if you have git, in the console run
+```
+git
+```
+If an error shows up, you will need to install git on your computer. See here for instructions: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+Otherwise, open up console/command prompt in the directory you wish to clone this project in.
+run the command
+```
+git clone https://github.com/3chospirits/discord-bot-template.git
+```
+Now you have all the code in this repo cloned to your computer!!
+
+
+## 2. Get Node.js and npm
  This bot runs with node.js. You need to have a version of nodejs > 12.x.x to run this bot! You need to make sure you have node.js installed on your computer/server! To check, run
 
 ```
@@ -25,13 +40,13 @@ npm -v
 ```
 
 
-## 2. Installing dependencies
+## 3. Installing dependencies
 This package relies on a couple of npm packages that requires installation before the bot can run. Make sure you have your console path in the same directory as the `package.json` file then run the command
 ```
 npm i
 ```
 
-## 3. Adding your bot's token
+## 4. Adding your bot's token
 Go to https://discordapp.com/developers/applications/me and login with your discord account. 
 
 Click on `New Application`. Name your application anything you want, (but try to make it unique, if too many bots have the same name, discord won't let you use this username)! 
@@ -48,7 +63,7 @@ Now come back to your code and paste the token in the `config.js` file replacing
 
 *If you make a github repo, **make sure it is set to private if it includes your token**
 
-## 3. Adding the bot to a server
+## 5. Adding the bot to a server
 
 To add your bot to a discord server, head back to the discord developer panel. 
 
@@ -58,7 +73,7 @@ In the `Scopes` grid of checkboxes, check `bot` and select any permissions you w
 
 Then click on the `Copy` button next to long url in the scopes box and goto the given link to add the bot to your server
 
-## 4. Add yourself to bot admin permissions
+## 6. Add yourself to bot admin permissions
 
 Go to the config.js and paste your discord user ID and replace the `315850603396071424`. 
 
@@ -68,7 +83,7 @@ This will give you access to all the commands.
 
 In commands marked with adminOnly (eval, ping, reload), only users with their ID added to the admins array will be able to run those commands.
 
-## 5. Running the bot
+## 7. Running the bot
 
 In a console in the directory including the project, run 
 ```
