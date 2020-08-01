@@ -129,6 +129,7 @@ Ping
 
 Reload
 * reloads all commands, events, and functions in the three respective folders
+* **ONLY RELOADS CODE WITHIN THE commands, events, and functions folders**
 * helpful for development to change code of the bot and test without need to restart the entire bot
 * Testing
     * start the bot
