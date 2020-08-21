@@ -6,6 +6,11 @@ Documentation for this repo is a work-in-progress, please pardon any typos. If y
 
 Please see below for a step-by-step walkthrough of how to setup your discord bot with this framework!
 
+## **Typescript**
+If you have experience with typescript and would like to use that, please check out the typescript-converted version of this template, [discord-bot](https://github.com/terzhang/discord-bot) by [terzhang](https://github.com/terzhang)! 
+
+*Would ONLY recommend for people ALREADY familiar with typescript.* 
+
 ## **General Information is included after the instructions for setting up the bot!**
 
 # Setting up to run the bot!
