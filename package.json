@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/3chospirits/discord-bot-template#readme",
   "dependencies": {
-    "discord.js": "^12.2.0",
+    "discord.js": "^12.5.1",
     "fs": "0.0.1-security",
-    "got": "^11.5.1",
-    "pm2": "^4.4.0",
+    "got": "^11.8.1",
+    "pm2": "^4.5.0",
     "util": "^0.12.3"
   }
 }
