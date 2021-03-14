@@ -7,7 +7,7 @@ module.exports = {
     description: "evaluates javascript code",
     run: async (bot) => {
         let {message, args, client, config, prefix} = bot
-        var code = message.content.replace(`${prefix}eval`, "").trim();
+        var code = message.content.replace(new RegExp(`${prefix}+ev(al)?`, "gi"), "").trim();
         code = code.replace(/(^\`{3}js(\n|\s)*)|((\n|\s)*\`{3}$)/g, ""); //allows the usage of the js code block in discord (```js...```)
         const result = new Promise((resolve, reject) => resolve(eval(code)));
     
