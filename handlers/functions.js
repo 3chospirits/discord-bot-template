@@ -24,6 +24,6 @@ module.exports = async (client, reload) => {
 					client.aliases.set(alias, pull.name); //adds it to functions
 				});
 		}
-	if (errors.length == 0) return console.log("Events: Build Success");
-  console.log("Errors:" + errors);
+	if (errors.length == 0) console.log("Events: Build Success");
+  	else console.log("Errors:" + errors);
 };
