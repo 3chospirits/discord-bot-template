@@ -1,15 +1,13 @@
 module.exports = {
 	name: "ready",
-	func: runAll,
+	run: runAll,
 };
 function runAll(bot) {
-	login(bot);
-}
-function login(bot){
-    const {client} = bot;
-    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("")
-    console.log(`   Logged in as ${client.user.tag}!   `);
-    console.log("")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+    console.log(`
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    Logged in as ${bot.client.user.tag}!   
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	`)
 }
