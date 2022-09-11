@@ -1,5 +1,13 @@
 const Discord = require("discord.js");
-const client = new Discord.Client({ disableMentions: "everyone" }); //remove the parameters being passed into 
+const client = new Discord.Client({
+    disableMentions: "everyone",
+    intents: [
+        "Guilds",
+        "GuildMembers",
+        "GuildMessages",
+        "MessageContent"
+    ]
+}); //remove the parameters being passed into 
 
 const config = require("./config.js");
 const { prefix, token } = require("./config.js");
@@ -20,7 +28,7 @@ const fs = require("fs");
  *      https://firebase.google.com/docs/firestore https://www.mongodb.com/
  */
 
-let bot = {client, config, prefix};
+let bot = { client, config, prefix };
 /**
  * These add commands, aliases, events, and functions to the client object
  * Discord Collections work like a Map/Dictionary Object
@@ -39,9 +47,9 @@ client.categories = fs.readdirSync("./commands/");
  * and the new data will be loaded into the collections so you can update code without restarting the
  * entire bot
  */
-client.loadCmds = (client, reload) => require(`./handlers/command`)(client, reload);
-client.loadFunctions = (client, reload) => require(`./handlers/function`)(client, reload);
-client.loadEvents = (client, reload) => require("./handlers/event.js")(client, reload, bot);
+client.loadCmds = (client, reload) => require(`./handlers/commands`)(client, reload);
+client.loadFunctions = (client, reload) => require(`./handlers/functions`)(client, reload);
+client.loadEvents = (client, reload) => require("./handlers/events.js")(client, reload, bot);
 client.loadCmds(client, false);
 client.loadFunctions(client, false);
 client.loadEvents(client, false);
