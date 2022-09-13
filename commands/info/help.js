@@ -8,7 +8,6 @@ module.exports = {
 	description: "Returns all commands, or one specific command's info",
 	usage: "[command | alias]",
 	run: async ({client, message, args, prefix}) => {
-		message.reply({ ephemeral: true, content: "Lol" })
 		if (args[0]) return getCMD(client, message, args[0], prefix);
 		else return getAll(client, message, prefix);
 	},
