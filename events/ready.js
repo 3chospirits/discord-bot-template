@@ -6,8 +6,8 @@ function runAll(bot) {
     console.log(`
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-    Logged in as ${bot.client.user.tag}!   
+	  Logged in as ${bot.client.user.tag}!   
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	`)
 }
