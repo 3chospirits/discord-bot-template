@@ -1,8 +1,7 @@
-const Discord = require("discord.js")
 const {getPermissionLevel, getPermissionName} = require("../handlers/permissions")
 module.exports = {
-    name: "message",
-    func: runAll,
+    name: "messageCreate",
+    run: runAll,
 };
 
 function runAll(bot, message) {
@@ -21,13 +20,13 @@ async function runCommands(bot, message) {
 
     // old permission compatibility
     if (command.adminOnly === true) {
-        if (!config.bot_admin.includes(message.author.id))
-            return client.functions.get("functions").response(message, "This command requires bot owner permissions")
+        if (!config.bot_admins.includes(message.author.id))
+            return client.functions.get("functions").response(message, "Only this bot's admins can execute this command!")
     }
 
     // handles new permissions
     // configure permissions in ~/data/permission_config.js
-    if (command.permission && getPermissionLevel(message.member) > command.permission)
+    if (command.permission && getPermissionLevel(message.member) < command.permission)
         return client.functions.get("functions").response(message, `This command requires ${getPermissionName(command.permission)} permissions`)
 
     bot.message = message

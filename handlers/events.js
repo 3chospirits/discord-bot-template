@@ -10,29 +10,29 @@ module.exports = (client, reload, bot) => {
 			if (reload) delete require.cache[require.resolve(`../events/${f}`)];
 			let pull = require(`../events/${f}`);
 			client.events.set(pull.name, pull);
-			if (!reload) console.log(`${i + 1}: ${f} loaded!`);
+			if (!reload) console.log(`| ${i + 1}: ${f} loaded!`);
 		});
 	});
 	if (!reload) initEvents(client, bot);
 };
-//IF YOU WISH TO HANDLE MORE EVENTS, BE SURE TO ADD THEM IN initEvents(client, bot)
-//adding anything here would require a full bot restart!!
+//IF YOU WISH TO HANDLE MORE EVENTS, BE SURE TO ADD THEM IN THE initEvents() FUNCTION
+//changing anything here would require a full bot restart!!
 //examples for channelCreate/Delete, GuildCreate/Delete are shown
 //if you need to add other events, copy the formatting and use this cheatsheet for reference
 // https://gist.github.com/koad/316b265a91d933fd1b62dddfcc3ff584
 
 function initEvents(client, bot) {
-	client.on("message", (message) => {
+	client.on("messageCreate", message => {
 		if (!message.guild) return;
 		try {
-			client.events.get("message").func(bot, message);
+			client.events.get("messageCreate").run(bot, message);
 		} catch (err) {
 			console.error(err);
 		}
     });
-    client.on("ready", ()=>{
+    client.on("ready", () =>{
         try {
-			client.events.get("ready").func(bot);
+			client.events.get("ready").run(bot);
 		} catch (err) {
 			console.error(err);
 		}

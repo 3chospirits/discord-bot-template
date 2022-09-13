@@ -62,7 +62,7 @@ Then click on `Add Bot` and confirm to create your discord bot
 
 Under `TOKEN`, click on the `Copy` button.
 
-Now come back to your code and paste the token in the `config.js` file replacing the `place-your-token-here` with your bot's token
+Go to `config.js` then paste your bot's token in the `token` string.
 
 **KEEP YOUR BOT'S TOKEN SAFE!! It is the equivalent as the login information for your bot! Anyone with access to the token has full permission to run anything off of your bot!!!**
 
@@ -80,13 +80,13 @@ Then click on the `Copy` button next to long url in the scopes box and goto the 
 
 ## 6. Add yourself to bot admin permissions
 
-Go to the config.js and paste your discord user ID and replace the `315850603396071424`. 
+Copy your discord user ID then paste it in the bot_admins array inside a string. 
 
 (if you need help finding your user ID, use this tutorial: https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)
 
 This will give you access to all the commands. 
 
-In commands marked with adminOnly (eval, ping, reload), only users with their ID added to the admins array will be able to run those commands.
+In commands marked with adminOnly (ping and reload), only users with their ID added to the admins array will be able to run those commands.
 
 ## 7. Running the bot
 
@@ -94,20 +94,21 @@ In a console in the directory including the project, run
 ```
 node index.js
 ```
-If the bot outputs 
+If 
 ```
 Commands: Build Success
 Events: Build Success
 Loading 2 events...
-1: message.js loaded!
-2: ready.js loaded!
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+| 1: messageCreate.js loaded!
+| 2: ready.js loaded!
 
-   Logged in as YourBotUsername!
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Logged in as BotUsername!
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
-without any additional errors, then **CONGRATULATIONS!!**
+appears in your console without any additional errors, then **CONGRATULATIONS**! Your bot is not online.
 
 To test if the bot is fully working, go to the server that you added the bot to and type
 ```
@@ -121,22 +122,16 @@ This bot utilizes a command, event, and functions handler. This allows for the b
 Documentation has been added to most of the files explaining  the basic features of the bot. 
 
 ## Dev Commands
-Eval
-* allows you to execute js code directly from discord chat and gives you with corresponding output
-* this command is mostly useful for development and debugging
-* Testing
-    * run `.eval message.channel.send("hello world")!` in discord chat
-
-Ping
+`ping`
 * checks if the bot is online and if the commands are loading in properly
 * gives the latency of the bot and discord's api
 * shows uptime of bot since last restart
 
-Reload
+`reload`
 * reloads all commands, events, and functions in the three respective folders
 * **ONLY RELOADS CODE WITHIN THE commands, events, and functions folders**
 * helpful for development to change code of the bot and test without need to restart the entire bot
-* Testing
+* Testing:
     * start the bot
     * run `.ping` in discord chat
     * modify the `ping.js` file (like add a symbol before the P in `msg.edit('Pong...`

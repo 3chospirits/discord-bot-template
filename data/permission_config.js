@@ -1,37 +1,30 @@
-// user_ids     match any
-// role_ids     match any
-// guild_perms  match all
+// guild_perms     default permission required
+// user_ids     users that can bypass the guild permission needed
+// role_ids     roles that can bypass the guild permission needed
 
 
 module.exports = {
     permissionLevels: [
         {
-            name: "Owner",
-            level: -1,
-            user_ids:[],
-            role_ids:[],
-            guild_perms:[]
-        },
-        {
             name: "Administrator",
-            level: 0,
+            level: 2,
             user_ids:[],
             role_ids:[],
-            guild_perms:["ADMINISTRATOR"]
+            guild_perms:["Administrator"]
         },
         {
             name: "Moderator",
             level: 1,
             user_ids:[],
             role_ids:[],
-            guild_perms:["MANAGE_MESSAGES"]
+            guild_perms:["ManageMessages"]
         },
         {
             name: "Member",
-            level: 2,
+            level: 0,
             user_ids: [],
             role_ids: [],
-            guild_perms: ["SEND_MESSAGES"]
+            guild_perms: ["SendMessages"]
         }
     ]
 }

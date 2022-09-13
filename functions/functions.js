@@ -21,13 +21,13 @@ module.exports = {
  */
 function response(message, desc, ok, noDelete) {
 	//replies an error message to user
-	var embed = new Discord.MessageEmbed()
+	var embed = new Discord.EmbedBuilder()
 		.setTitle(ok ? "Success!" : "Error!")
 		.setColor(ok ? "#00ff00" : "ff0000") //change the colors here
 		.setDescription(`**${ok ? "`✅` " : "`❌` "}** ${desc}`);
-	return message.channel.send(embed).then((m) => {
+	return message.channel.send({ embeds: [embed] }).then(m => {
 		if (!noDelete) {
-			m.delete({ timeout: 5000 });
+            setTimeout(() => m.delete(), 5000)
 		}
 	});
 }
