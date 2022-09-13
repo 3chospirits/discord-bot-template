@@ -11,12 +11,10 @@ module.exports = {
 
     description: "", // description shown in the help command
     usage: "", // more information about using the command shown with the help command
-    run: async (bot) => {
-      let { client, message, args, config} = bot //deconstruct the bot object into the individual properties for use in command
+    run: async ({ client, message, args, config}) => {
       //command logic here
 
       //example of how to use the error response handler
       if (args[0] === undefined) throw "?give me more info" //this would return "give me more info" back to the user in a message
     }
-  }
-  
+}
